@@ -21,7 +21,7 @@ import os
 
 output_dir = 'ubifs-root'
 
-error_action = True                     # if 'exit' on any error exit program.
+error_action = 'bypass'                 # if 'exit' on any error exit program.
 fatal_traceback = False                 # Print traceback on fatal errors.
 
 ignore_block_header_errors = False      # Ignore block errors.

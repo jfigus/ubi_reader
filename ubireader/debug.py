@@ -38,8 +38,9 @@ def error(obj, level, message):
         print('{} {}: {}'.format(obj.__name__, level, message))
         if settings.fatal_traceback:
             traceback.print_exc()
-        sys.exit(1)
-
+        #sys.exit(1)
+    elif settings.error_action is 'bypass':
+        pass
     else:
         if level.lower() == 'warn':
             print('{} {}: {}'.format(obj.__name__, level, message))
@@ -47,7 +48,7 @@ def error(obj, level, message):
             print('{} {}: {}'.format(obj.__name__, level, message))
             if settings.fatal_traceback:
                 traceback.print_exc()
-            sys.exit(1)
+            #sys.exit(1)
         else:
             print('{} {}: {}'.format(obj.__name__, level, message))
 
